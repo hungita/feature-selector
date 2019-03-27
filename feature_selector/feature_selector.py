@@ -520,10 +520,10 @@ class FeatureSelector():
         plt.style.use('seaborn-white')
         plt.figure(figsize = (7, 5))
         plt.hist(self.missing_stats['missing_fraction'], bins = np.linspace(0, 1, 11), edgecolor = 'k', color = 'red', linewidth = 1.5)
-        plt.xticks(np.linspace(0, 1, 11));
+        plt.xticks(np.linspace(0, 1, 11))
         plt.xlabel('Missing Fraction', size = 14); plt.ylabel('Count of Features', size = 14); 
-        plt.title("Fraction of Missing Values Histogram", size = 16);
-        
+        plt.title("Fraction of Missing Values Histogram", size = 16)
+        plt.show()
     
     def plot_unique(self):
         """Histogram of number of unique values in each feature"""
@@ -536,7 +536,7 @@ class FeatureSelector():
         self.unique_stats.plot.hist(edgecolor = 'k', figsize = (7, 5))
         plt.ylabel('Frequency', size = 14); plt.xlabel('Unique Values', size = 14); 
         plt.title('Number of Unique Values Histogram', size = 16);
-        
+        plt.show()
     
     def plot_collinear(self, plot_all = False):
         """
@@ -586,6 +586,7 @@ class FeatureSelector():
         ax.set_xticks([x + 0.5 for x in list(range(corr_matrix_plot.shape[1]))])
         ax.set_xticklabels(list(corr_matrix_plot.columns), size = int(160 / corr_matrix_plot.shape[1]));
         plt.title(title, size = 14)
+        plt.show()
         
     def plot_feature_importances(self, plot_n = 15, threshold = None):
         """
